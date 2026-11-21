@@ -1,1 +1,1 @@
-print = (f"Hola Mundo")
+print("Hola Mundo")
