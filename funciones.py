@@ -31,7 +31,7 @@ def guardar_expedientes():
 def registrar_expediente():
     print("\n--- REGISTRO DE EXPEDIENTE ---")
 
-    codigo = input("Ingrese el código del expediente: ").strip()
+    codigo = input("Ingrese el código del expediente: ").strip().upper()
 
     for expediente in expedientes:
         if expediente["codigo"] == codigo:
@@ -70,7 +70,7 @@ def registrar_expediente():
 def eliminar_expediente():
     print("\n--- ELIMINAR EXPEDIENTE ---")
 
-    codigo = input("Ingrese el código del expediente: ").strip()
+    codigo = input("Ingrese el código del expediente: ").strip().upper()
 
     for expediente in expedientes:
         if expediente["codigo"] == codigo:
@@ -112,7 +112,7 @@ def buscar_por_dni():
 def buscar_por_codigo():
     print("\n--- BUSCAR POR CÓDIGO ---")
 
-    codigo = input("Ingrese el código: ").strip()
+    codigo = input("Ingrese el código: ").strip().upper()
 
     for expediente in expedientes:
         if expediente["codigo"] == codigo:
