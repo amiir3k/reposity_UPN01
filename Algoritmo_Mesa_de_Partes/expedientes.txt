@@ -1,0 +1,10 @@
+EXP-2026-0007;45871236;Rosa Quispe Mamani;Triaje;Apertura de historia clínica;02/11/2026
+EXP-2026-0002;70214589;Luis Paredes Soto;Medicina General;Solicitud de copia de historia;27/10/2026
+EXP-2026-0010;45871236;Rosa Quispe Mamani;Laboratorio;Solicitud de resultados;05/11/2026
+EXP-2026-0004;08123457;Carmen Huamán Ríos;Obstetricia;Constancia de atención;29/10/2026
+EXP-2026-0001;61234570;Jorge Salazar Vega;Triaje;Apertura de historia clínica;27/10/2026
+EXP-2026-0009;72558104;Milagros Flores Cruz;Pediatría;Referencia a hospital;04/11/2026
+EXP-2026-0003;10457823;Pedro Ramos Lazo;Odontología;Reprogramación de cita;28/10/2026
+EXP-2026-0006;70214589;Luis Paredes Soto;Laboratorio;Solicitud de resultados;31/10/2026
+EXP-2026-0005;43098761;Ana Torres Medina;Medicina General;Actualización de datos SIS;30/10/2026
+EXP-2026-0008;09876543;Julio Chávez Rojas;Triaje;Apertura de historia clínica;03/11/2026
