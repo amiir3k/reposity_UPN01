@@ -1,31 +1,45 @@
-import json
 import os
 from datetime import datetime
 
 
 expedientes = []
 
-ARCHIVO = "expedientes.json"
+ARCHIVO = "expedientes.txt"
 
 
 def cargar_expedientes():
-    global expedientes
+    if not os.path.exists(ARCHIVO):
+        return
 
-    if os.path.exists(ARCHIVO):
-        try:
-            with open(ARCHIVO, "r", encoding="utf-8") as archivo:
-                datos = json.load(archivo)
+    lineas_malas = 0
 
-                if isinstance(datos, list):
-                    expedientes = datos
+    with open(ARCHIVO, "r", encoding="utf-8") as archivo:
+        for linea in archivo:
+            datos = linea.strip().split(";")
 
-        except json.JSONDecodeError:
-            print("El archivo está vacío o contiene datos inválidos.")
+            if len(datos) != 6:
+                lineas_malas += 1
+                continue
+
+            expediente = {
+                "codigo": datos[0],
+                "dni": datos[1],
+                "nombre": datos[2],
+                "area": datos[3],
+                "asunto": datos[4],
+                "fecha": datos[5]
+            }
+            expedientes.append(expediente)
+
+    if lineas_malas > 0:
+        print("Líneas omitidas por formato incorrecto:", lineas_malas)
 
 
 def guardar_expedientes():
     with open(ARCHIVO, "w", encoding="utf-8") as archivo:
-        json.dump(expedientes, archivo, ensure_ascii=False, indent=4)
+        for e in expedientes:
+            linea = e["codigo"] + ";" + e["dni"] + ";" + e["nombre"] + ";" + e["area"] + ";" + e["asunto"] + ";" + e["fecha"]
+            archivo.write(linea + "\n")
 
 
 def registrar_expediente():
@@ -48,8 +62,12 @@ def registrar_expediente():
     area = input("Ingrese el área médica: ").strip()
     asunto = input("Ingrese el asunto del expediente: ").strip()
 
-    if not all([codigo, nombre, area, asunto]):
+    if codigo == "" or nombre == "" or area == "" or asunto == "":
         print("Todos los campos son obligatorios.")
+        return
+
+    if ";" in nombre or ";" in area or ";" in asunto:
+        print("No use el carácter ; en los datos.")
         return
 
     nuevo_expediente = {

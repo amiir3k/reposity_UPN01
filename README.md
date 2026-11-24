@@ -4,7 +4,7 @@ Prototipo en Python 3 del desafío «Del archivador al algoritmo» (Fundamentos 
 
 - `principal.py`: menú del sistema.
 - `funciones.py`: registrar, eliminar, buscar (DNI, código, área), listar y ordenar por código.
-- `expedientes.json`: expedientes guardados (datos ficticios de prueba).
+- `expedientes.txt`: expedientes guardados, uno por línea separado por `;` (datos ficticios de prueba).
 
 Ejecutar: `python3 principal.py`
 
