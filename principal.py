@@ -5,7 +5,8 @@ from funciones import (
     buscar_por_dni,
     buscar_por_codigo,
     buscar_por_area,
-    mostrar_todos
+    mostrar_todos,
+    ordenar_por_codigo
 )
 
 cargar_expedientes()
@@ -22,7 +23,8 @@ while True:
     print("4. Buscar por codigo")
     print("5. Buscar por area")
     print("6. Mostrar todos los expedientes")
-    print("7. Salir")
+    print("7. Ordenar por codigo")
+    print("8. Salir")
     print("================================")
 
     opcion = input("Seleccione una opcion: ")
@@ -46,6 +48,9 @@ while True:
         mostrar_todos()
 
     elif opcion == "7":
+        ordenar_por_codigo()
+
+    elif opcion == "8":
         print("\nGracias por utilizar el sistema.")
         break
 

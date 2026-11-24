@@ -146,3 +146,24 @@ def mostrar_todos():
 
     for expediente in expedientes:
         mostrar_expediente(expediente)
+
+def ordenar_por_codigo():
+    print("\n--- ORDENAR POR CÓDIGO ---")
+
+    if not expedientes:
+        print("No hay expedientes registrados.")
+        return
+
+    n = len(expedientes)
+
+    # Ordenamiento burbuja: compara pares vecinos y los intercambia
+    for i in range(n - 1):
+        for j in range(n - 1 - i):
+            if expedientes[j]["codigo"] > expedientes[j + 1]["codigo"]:
+                expedientes[j], expedientes[j + 1] = expedientes[j + 1], expedientes[j]
+
+    guardar_expedientes()
+
+    print("Expedientes ordenados por código:")
+    for expediente in expedientes:
+        print(expediente["codigo"], "-", expediente["nombre"], "-", expediente["area"])
